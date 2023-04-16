@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ViewPager para alternar entre abas -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--        &lt;!&ndash; Layout de cada aba &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            &lt;!&ndash; Lista de heróis &ndash;&gt;-->
+<!--            <ListView-->
+<!--                android:id="@+id/heroes_list"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Layout de cada aba &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            &lt;!&ndash; Lista de vilões &ndash;&gt;-->
+<!--            <ListView-->
+<!--                android:id="@+id/villains_list"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.viewpager2.widget.ViewPager2>-->
+
+    <!-- Abas -->
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabs"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        app:tabGravity="fill"-->
+<!--        app:tabMode="fixed" />-->
+
+</RelativeLayout>

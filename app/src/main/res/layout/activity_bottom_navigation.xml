@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/char_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".character.view.NewCharacterActivity">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tb_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/icones"
+            app:title="Adicionando personagem" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tb_navigation"
+            android:hint="Name"
+            android:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tiet_name"
+            android:hint="Url da imagem"
+            android:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tiet_url"
+            android:hint="Description"
+            android:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tiet_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tiet_date"
+            android:hint="Age"
+            android:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tiet_description"
+            app:layout_constraintStart_toEndOf="@+id/tiet_age"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Date of Birth"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/spn_marvel_dc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tiet_age"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spn_hero_vilain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/spn_marvel_dc"
+            android:spinnerMode="dialog" />
+
+        <Button
+            android:id="@+id/btn_save_character"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="confirm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
