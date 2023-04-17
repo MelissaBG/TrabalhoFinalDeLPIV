@@ -33,7 +33,8 @@ class CharacterViewModel : ViewModel() {
             }
         }
     }
-    fun  removeItem(itemId: Int) {
+
+    fun removeItem(itemId: Int) {
         state.value = CharacterViewState.ShowLoading
         viewModelScope.launch {
             val delete = ListCharacaterRemoteDataSource().deleteCharacter(itemId)
@@ -42,12 +43,12 @@ class CharacterViewModel : ViewModel() {
             } else {
                 state.value = CharacterViewState.ShowError
             }
+        }
     }
 }
-
-sealed class CharacterViewState {
-    data class ShowList(val list: List<CharacterResponse>) : CharacterViewState()
-    object ShowLoading : CharacterViewState()
-    object ShowError : CharacterViewState()
-    object ShowDeleteOk : CharacterViewState()
-}
+    sealed class CharacterViewState {
+        data class ShowList(val list: List<CharacterResponse>) : CharacterViewState()
+        object ShowLoading : CharacterViewState()
+        object ShowError : CharacterViewState()
+        object ShowDeleteOk : CharacterViewState()
+    }

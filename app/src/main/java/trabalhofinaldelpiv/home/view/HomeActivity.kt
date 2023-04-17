@@ -1,16 +1,18 @@
 package trabalhofinaldelpiv.home.view
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.fundatec.trabalhofinaldelpiv.CharacterFragment
 import com.fundatec.trabalhofinaldelpiv.NewCharacterActivity
-import com.fundatec.trabalhofinaldelpiv.R
 import com.fundatec.trabalhofinaldelpiv.databinding.ActivityHomeBinding
 import com.fundatec.trabalhofinaldelpiv.login.presentation.CharacterViewModel
+import com.google.android.material.snackbar.Snackbar
 
 import trabalhofinaldelpiv.login.login.presentation.ViewState
 
@@ -31,9 +33,21 @@ class HomeActivity : AppCompatActivity() {
     private fun configObserver() {
         viewModel.viewState.observe(this) { state ->
             when (state) {
-                is ViewState.ShowError -> showSnackBarError(R.string.error_login)
+                is ViewState.ShowDeleteMessage -> showDeleteMessage("Deletado com sucesso!")
+                is ViewState.ShowDeleteError -> showDeleteError("Erro ao deletar!")
             }
         }
+    }
+    private fun showDeleteMessage(@StringRes messageId: Int){
+        hideLoging()
+        Snackbar.make(binding.container, messageId, Snackbar.LENGTH_LONG).show()
+    }
+    private fun showDeleteError(@StringRes messageId: Int){
+        hideLoging()
+        Snackbar.make(binding.container, messageId, Snackbar.LENGTH_LONG).show()
+    }
+    private fun hideLoging() {
+        binding.pbLoading.visibility = View.VISIBLE
     }
 
     private fun configTab() {
