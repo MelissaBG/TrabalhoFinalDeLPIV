@@ -1,6 +1,7 @@
 package trabalhofinaldelpiv.profile.data.repository
-import com.fundatec.trabalhofinaldelpiv.login.presentation.ErrorModel
+
 import trabalhofinaldelpiv.database.RegisterResponse
+import trabalhofinaldelpiv.login.login.domain.model.ErrorModel
 import trabalhofinaldelpiv.profile.data.RegisterUserLocalDataSource
 import trabalhofinaldelpiv.profile.data.RegisterUserRemoteDatasSource
 import trabalhofinaldelpiv.webservice.Result

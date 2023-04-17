@@ -1,6 +1,7 @@
-package com.fundatec.trabalhofinaldelpiv.login.presentation
+package trabalhofinaldelpiv.profile.domain
+
 
 sealed class ErrorModelRegisterUser{
-    object ErrorRegisterUser : ErrorModel()
-    object ErrorRegister : ErrorModel()
+    object ErrorRegisterUser : ErrorModelRegisterUser()
+    object ErrorRegister : ErrorModelRegisterUser()
 }

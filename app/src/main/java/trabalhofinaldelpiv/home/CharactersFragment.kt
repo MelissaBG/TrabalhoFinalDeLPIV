@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.fundatec.trabalhofinaldelpiv.databinding.FragmentCharactersBinding
 import com.fundatec.trabalhofinaldelpiv.home.ListItemAdapter
+import com.fundatec.trabalhofinaldelpiv.login.presentation.CharacterViewModel
+import com.fundatec.trabalhofinaldelpiv.login.presentation.CharacterViewState
+import trabalhofinaldelpiv.login.login.presentation.ViewState
 
 
 private const val ARG_PARAM1 = "param1"
@@ -18,26 +22,36 @@ private const val ARG_PARAM1 = "param1"
 class CharacterFragment : Fragment() {
 
     private lateinit var binding: FragmentCharactersBinding
-    private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ListItemAdapter
 
+    private val viewModel by lazy {
+        ViewModelProvider(requireActivity()).get(CharacterViewModel::class.java)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCharactersBinding.inflate(inflater)
-        return binding.root
-        val view = inflater.inflate(R.layout.fragment_characters, container, false)
-        recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         adapter = ListItemAdapter()
-        recyclerView.adapter = adapter
-        return view
+        binding.recyclerView.adapter = adapter
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val simpleItemTouchCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+        viewModel.fetchList()
+        configItemTouch()
+        configObserver()
+        arguments?.run {
+//            binding.tvName.text = getString(ARG_PARAM1)
+        }
+    }
+    private fun configItemTouch(){
+        val simpleItemTouchCallback = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -45,19 +59,25 @@ class CharacterFragment : Fragment() {
             ): Boolean {
                 return false
             }
+
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) {
                 val position = viewHolder.adapterPosition
                 adapter.removeItem(position)
             }
         }
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
-        itemTouchHelper.attachToRecyclerView(recyclerView)
-
-        arguments?.run {
-//            binding.tvName.text = getString(ARG_PARAM1)
-        }
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
     }
 
+    private fun configObserver(){
+        viewModel.viewState.observe(this){state ->
+            when (state) {
+                is CharacterViewState.ShowList -> { adapter.setItems(state.list)}
+                is CharacterViewState.ShowLoading -> {}
+                is CharacterViewState.ShowError -> {}
+            }
+        }
+    }
     companion object {
         fun newInstance(param1: String) =
             CharacterFragment().apply {

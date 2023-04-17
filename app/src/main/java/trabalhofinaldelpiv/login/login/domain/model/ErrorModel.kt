@@ -1,4 +1,4 @@
-package com.fundatec.trabalhofinaldelpiv.login.presentation
+package trabalhofinaldelpiv.login.login.domain.model
 
 sealed class ErrorModel{
     object ErrorLogin : ErrorModel()

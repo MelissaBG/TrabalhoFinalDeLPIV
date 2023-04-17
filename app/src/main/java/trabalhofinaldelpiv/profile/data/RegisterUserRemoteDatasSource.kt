@@ -1,11 +1,12 @@
 package trabalhofinaldelpiv.profile.data
 import android.util.Log
-import com.fundatec.trabalhofinaldelpiv.login.presentation.ErrorModel
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import trabalhofinaldelpiv.database.RegisterResponse
 import trabalhofinaldelpiv.database.RegisterUserApi
 import trabalhofinaldelpiv.database.UserRegisterRequest
+import trabalhofinaldelpiv.login.login.domain.model.ErrorModel
 import trabalhofinaldelpiv.webservice.Result
 import trabalhofinaldelpiv.webservice.RetrofitNetworkClient
 

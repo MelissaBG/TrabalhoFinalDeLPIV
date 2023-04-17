@@ -18,7 +18,8 @@
             app:layout_constraintBottom_toTopOf="@+id/til_password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
 
             <EditText
                 android:id="@+id/et_email"

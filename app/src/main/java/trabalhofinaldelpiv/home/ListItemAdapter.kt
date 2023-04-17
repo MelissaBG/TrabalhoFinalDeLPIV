@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.fundatec.trabalhofinaldelpiv.databinding.ListItemBinding
+import trabalhofinaldelpiv.home.data.CharacterResponse
 
 
 class ListItemAdapter : RecyclerView.Adapter<ListItemViewHolder>() {
 
-    private val list = mutableListOf<String>()
+    private val list = mutableListOf<CharacterResponse>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder {
         val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,8 +24,9 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemViewHolder>() {
         holder.bind(list[position])
     }
 
-    fun setItems(items: List<String>) {
-        list.addAll(items);
+    fun setItems(items: List<CharacterResponse>) {
+        list.addAll(items)
+        notifyDataSetChanged()
     }
 
     fun removeItem(position: Int) {
