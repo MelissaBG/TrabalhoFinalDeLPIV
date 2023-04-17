@@ -1,16 +1,22 @@
 package trabalhofinaldelpiv.home.view
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.fundatec.trabalhofinaldelpiv.CharacterFragment
 import com.fundatec.trabalhofinaldelpiv.NewCharacterActivity
+import com.fundatec.trabalhofinaldelpiv.R
 import com.fundatec.trabalhofinaldelpiv.databinding.ActivityHomeBinding
+import com.fundatec.trabalhofinaldelpiv.login.presentation.CharacterViewModel
+
+import trabalhofinaldelpiv.login.login.presentation.ViewState
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
+    private val viewModel: CharacterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +26,14 @@ class HomeActivity : AppCompatActivity() {
 
         configTab()
         configHomeButton()
+        configObserver()
+    }
+    private fun configObserver() {
+        viewModel.viewState.observe(this) { state ->
+            when (state) {
+                is ViewState.ShowError -> showSnackBarError(R.string.error_login)
+            }
+        }
     }
 
     private fun configTab() {

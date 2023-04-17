@@ -40,4 +40,16 @@ class ListCharacaterRemoteDataSource {
         }
 
     }
+    suspend fun deleteCharacter(userId: Int
+    ): Result <Unit, ErrorModelListCharacter> {
+        return withContext(Dispatchers.IO) {
+            val response = service.deleteCharacter(userId)
+            if (response.isSuccessful) {
+                Result.Success(Unit)
+            } else {
+                Result.Error(ErrorModelListCharacter.ErrorListCharacter)
+            }
+        }
+
+    }
 }

@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.fundatec.trabalhofinaldelpiv.databinding.FragmentCharactersBinding
 import com.fundatec.trabalhofinaldelpiv.home.ListItemAdapter
 import com.fundatec.trabalhofinaldelpiv.login.presentation.CharacterViewModel
 import com.fundatec.trabalhofinaldelpiv.login.presentation.CharacterViewState
-import trabalhofinaldelpiv.login.login.presentation.ViewState
 
 
 private const val ARG_PARAM1 = "param1"
@@ -33,8 +31,6 @@ class CharacterFragment : Fragment() {
     ): View? {
         binding = FragmentCharactersBinding.inflate(inflater)
 
-
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         adapter = ListItemAdapter()
         binding.recyclerView.adapter = adapter
         return binding.root
@@ -63,6 +59,8 @@ class CharacterFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) {
                 val position = viewHolder.adapterPosition
                 adapter.removeItem(position)
+                adapter.notifyItemChanged(position)
+                viewModel.removeItem(adapter.getCharacterId(position))
             }
         }
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
@@ -70,7 +68,7 @@ class CharacterFragment : Fragment() {
     }
 
     private fun configObserver(){
-        viewModel.viewState.observe(this){state ->
+        viewModel.viewState.observe(requireActivity()){state ->
             when (state) {
                 is CharacterViewState.ShowList -> { adapter.setItems(state.list)}
                 is CharacterViewState.ShowLoading -> {}

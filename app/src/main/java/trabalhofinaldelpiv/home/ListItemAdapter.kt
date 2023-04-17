@@ -29,7 +29,11 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemViewHolder>() {
         notifyDataSetChanged()
     }
 
-    fun removeItem(position: Int) {
-
+    fun getCharacterId(position: Int): Int {
+        return list.get(position).id
+    }
+    fun removeItem(position: Int){
+        list.removeAt(position)
+        notifyDataSetChanged()
     }
 }

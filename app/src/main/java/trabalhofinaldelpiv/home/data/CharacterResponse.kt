@@ -11,6 +11,6 @@ data class CharacterResponse(
     val universeType : String,
     val characterType: String ,
     val age:String,
-    val date: String
+    val date: String?
     //val results: List<Character>
 )

@@ -33,6 +33,16 @@
                 android:value="" />
         </activity>
         <activity
+            android:name="com.fundatec.trabalhofinaldelpiv.NewCharacterActivity"
+            android:exported="false"
+            android:parentActivityName="com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity" >
+        </activity>
+        <activity
+            android:name="com.fundatec.trabalhofinaldelpiv.NewCharacterActivity"
+            android:exported="false"
+            android:parentActivityName="com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity" >
+        </activity>
+        <activity
             android:name="com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait" >

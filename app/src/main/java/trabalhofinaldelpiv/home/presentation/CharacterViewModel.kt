@@ -10,8 +10,7 @@ import kotlinx.coroutines.launch
 import trabalhofinaldelpiv.App
 import trabalhofinaldelpiv.home.data.CharacterResponse
 import trabalhofinaldelpiv.home.data.ListCharacaterRemoteDataSource
-import trabalhofinaldelpiv.login.login.data.LoginRemoteDataSource
-import trabalhofinaldelpiv.login.login.presentation.ViewState
+import trabalhofinaldelpiv.profile.presentation.ViewState
 
 //'LoginViewModel' que é uma subclasse 'ViewModel'. Essa classe gernecia a lógica de negócio e a comunicação entre a camada de vizualização
 // e a camada de dados.
@@ -34,13 +33,21 @@ class CharacterViewModel : ViewModel() {
             }
         }
     }
+    fun  removeItem(itemId: Int) {
+        state.value = CharacterViewState.ShowLoading
+        viewModelScope.launch {
+            val delete = ListCharacaterRemoteDataSource().deleteCharacter(itemId)
+            if (delete.get() != null) {
+                state.value = CharacterViewState.ShowDeleteOk
+            } else {
+                state.value = CharacterViewState.ShowError
+            }
+    }
 }
 
 sealed class CharacterViewState {
-
     data class ShowList(val list: List<CharacterResponse>) : CharacterViewState()
     object ShowLoading : CharacterViewState()
     object ShowError : CharacterViewState()
-
-
+    object ShowDeleteOk : CharacterViewState()
 }

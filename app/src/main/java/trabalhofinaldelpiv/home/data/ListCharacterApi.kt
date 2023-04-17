@@ -2,6 +2,7 @@ package trabalhofinaldelpiv.home.data
 
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -20,5 +21,8 @@ interface ListCharacterApi {
     suspend fun getListCharacters(
         @Path("userId") userId: Int
     ): Response <List<CharacterResponse>>
-
+    @DELETE("api/character/{userId}")
+    suspend fun deleteCharacter(
+        @Path("userId") userId: Int
+    ): Response<Int>
 }

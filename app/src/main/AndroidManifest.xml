@@ -23,6 +23,16 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".NewCharacterActivity"
+            android:exported="false"
+            android:parentActivityName=".login.view.LoginActivity">
+        </activity>
+        <activity
+            android:name=".NewCharacterActivity"
+            android:exported="false"
+            android:parentActivityName=".login.view.LoginActivity">
+        </activity>
+        <activity
             android:name=".login.view.LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait">
