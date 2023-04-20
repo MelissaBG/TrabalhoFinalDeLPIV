@@ -12,5 +12,5 @@ data class CharacterResponse(
     val characterType: String ,
     val age:String,
     val date: String?
-    //val results: List<Character>
+
 )
