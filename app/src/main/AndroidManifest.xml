@@ -25,10 +25,10 @@
         <activity
             android:name=".NewCharacterActivity"
             android:exported="false"
-            android:parentActivityName=".login.view.LoginActivity">
+            android:parentActivityName="trabalhofinaldelpiv.home.view.HomeActivity">
         </activity>
         <activity
-            android:name=".NewCharacterActivity"
+            android:name="trabalhofinaldelpiv.profile.view.RegisterUserActivity"
             android:exported="false"
             android:parentActivityName=".login.view.LoginActivity">
         </activity>

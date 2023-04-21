@@ -1,4 +1,4 @@
-package com.fundatec.trabalhofinaldelpiv.login.view
+package trabalhofinaldelpiv.profile.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fundatec.trabalhofinaldelpiv.R
 import com.fundatec.trabalhofinaldelpiv.databinding.ActivityRegisterUserBinding
 import com.fundatec.trabalhofinaldelpiv.login.presentation.RegisterUserViewModel
+import com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity
 import com.google.android.material.snackbar.Snackbar
-import trabalhofinaldelpiv.home.view.HomeActivity
 import trabalhofinaldelpiv.profile.presentation.ViewState
 
 
@@ -30,7 +30,7 @@ class RegisterUserActivity : AppCompatActivity (){
 
         setContentView(binding.root)
 
-        configLoginButton()
+        configRegisterButton()
         configObserver()
     }
 
@@ -45,7 +45,7 @@ class RegisterUserActivity : AppCompatActivity (){
         }
     }
 
-    private fun configLoginButton() {
+    private fun configRegisterButton() {
         binding.btnRegister.setOnClickListener {
             viewModel.validateUserInput(
                 name = binding.etName.text.toString(),
@@ -57,7 +57,7 @@ class RegisterUserActivity : AppCompatActivity (){
 
     private fun showRegisterUser() {
         hideLoading()
-        val intent = Intent(this@RegisterUserActivity, HomeActivity::class.java)
+        val intent = Intent(this@RegisterUserActivity, LoginActivity::class.java)
         startActivity(intent)
     }
 

@@ -19,7 +19,8 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
         sViewsWithIds.put(R.id.til_password, 3);
         sViewsWithIds.put(R.id.et_password, 4);
         sViewsWithIds.put(R.id.btn_login, 5);
-        sViewsWithIds.put(R.id.pbLoading, 6);
+        sViewsWithIds.put(R.id.btn_newRegister, 6);
+        sViewsWithIds.put(R.id.pbLoading, 7);
     }
     // views
     // variables
@@ -28,15 +29,16 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private ActivityLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[5]
+            , (android.widget.Button) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.EditText) bindings[2]
             , (android.widget.EditText) bindings[4]
-            , (android.widget.ProgressBar) bindings[6]
+            , (android.widget.ProgressBar) bindings[7]
             , (com.google.android.material.textfield.TextInputLayout) bindings[1]
             , (com.google.android.material.textfield.TextInputLayout) bindings[3]
             );

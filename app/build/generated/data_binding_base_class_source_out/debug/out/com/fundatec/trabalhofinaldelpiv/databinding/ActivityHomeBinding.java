@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.viewpager.widget.ViewPager;
@@ -21,6 +23,12 @@ public abstract class ActivityHomeBinding extends ViewDataBinding {
   public final ImageButton btnHome;
 
   @NonNull
+  public final ConstraintLayout container;
+
+  @NonNull
+  public final ProgressBar pbLoading;
+
+  @NonNull
   public final MaterialToolbar tbNavigation;
 
   @NonNull
@@ -30,9 +38,12 @@ public abstract class ActivityHomeBinding extends ViewDataBinding {
   public final ViewPager vpHome;
 
   protected ActivityHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageButton btnHome, MaterialToolbar tbNavigation, TabLayout tlHome, ViewPager vpHome) {
+      ImageButton btnHome, ConstraintLayout container, ProgressBar pbLoading,
+      MaterialToolbar tbNavigation, TabLayout tlHome, ViewPager vpHome) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnHome = btnHome;
+    this.container = container;
+    this.pbLoading = pbLoading;
     this.tbNavigation = tbNavigation;
     this.tlHome = tlHome;
     this.vpHome = vpHome;

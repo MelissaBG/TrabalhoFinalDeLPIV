@@ -4,8 +4,10 @@ package com.fundatec.trabalhofinaldelpiv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,11 +17,19 @@ import java.lang.Object;
 
 public abstract class FragmentCharactersBinding extends ViewDataBinding {
   @NonNull
+  public final ConstraintLayout container;
+
+  @NonNull
+  public final ProgressBar pbLoading;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
   protected FragmentCharactersBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView recyclerView) {
+      ConstraintLayout container, ProgressBar pbLoading, RecyclerView recyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.container = container;
+    this.pbLoading = pbLoading;
     this.recyclerView = recyclerView;
   }
 

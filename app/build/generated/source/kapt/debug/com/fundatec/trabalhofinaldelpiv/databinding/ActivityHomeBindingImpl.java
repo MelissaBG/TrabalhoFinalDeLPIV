@@ -18,27 +18,27 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
         sViewsWithIds.put(R.id.btn_home, 2);
         sViewsWithIds.put(R.id.tl_home, 3);
         sViewsWithIds.put(R.id.vp_home, 4);
+        sViewsWithIds.put(R.id.pbLoading, 5);
     }
     // views
-    @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public ActivityHomeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ActivityHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageButton) bindings[2]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
+            , (android.widget.ProgressBar) bindings[5]
             , (com.google.android.material.appbar.MaterialToolbar) bindings[1]
             , (com.google.android.material.tabs.TabLayout) bindings[3]
             , (androidx.viewpager.widget.ViewPager) bindings[4]
             );
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
-        this.mboundView0.setTag(null);
+        this.container.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

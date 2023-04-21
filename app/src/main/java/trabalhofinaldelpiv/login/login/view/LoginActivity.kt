@@ -3,11 +3,8 @@ package com.fundatec.trabalhofinaldelpiv.login.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-
 import androidx.activity.viewModels
-
 import androidx.annotation.StringRes
-
 import androidx.appcompat.app.AppCompatActivity
 import com.fundatec.trabalhofinaldelpiv.R
 import com.fundatec.trabalhofinaldelpiv.databinding.ActivityLoginBinding
@@ -16,6 +13,7 @@ import com.fundatec.trabalhofinaldelpiv.login.presentation.LoginViewModel
 import trabalhofinaldelpiv.home.view.HomeActivity
 
 import trabalhofinaldelpiv.login.login.presentation.ViewState
+import trabalhofinaldelpiv.profile.view.RegisterUserActivity
 
 class LoginActivity : AppCompatActivity (){
 
@@ -32,6 +30,7 @@ class LoginActivity : AppCompatActivity (){
             setContentView(binding.root)
 
             configLoginButton()
+            configRegisterButton()
             configObserver()
 
 
@@ -56,15 +55,28 @@ class LoginActivity : AppCompatActivity (){
 
                     email = binding.etEmail.text.toString(),
 
-                    password = binding.etPassword.text.toString(),)
+                    password = binding.etPassword.text.toString())
 
             }
 
         }
+    private fun configRegisterButton() {
+
+        binding.btnNewRegister.setOnClickListener {
+            showNewRegister()
+        }
+
+    }
 
     private fun showHome() {
         hideLoging()
         val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showNewRegister() {
+        hideLoging()
+        val intent = Intent(this@LoginActivity, RegisterUserActivity::class.java)
         startActivity(intent)
     }
 
