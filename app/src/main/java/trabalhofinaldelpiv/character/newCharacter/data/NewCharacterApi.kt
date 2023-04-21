@@ -1,17 +1,17 @@
 package trabalhofinaldelpiv.character.newCharacter.data
 
-import okhttp3.Response
-import okhttp3.ResponseBody
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 import java.util.*
 
 interface NewCharacterApi {
-    @GET("api/character/{id}")
-    suspend fun characters(
-        @Path("id") userId: Int,
-        @Body character: CharacterRequest,
-    ): Response
+//    @GET("api/character/{id}")
+//    suspend fun characters(
+//        @Path("id") userId: Int
+//    ): Response
+    @POST("api/character/{userId}")
+    suspend fun saveNewCharacter(
+    @Path("userId") userId: Int,
+    @Body character : CharacterRequest,
+    ): retrofit2.Response<Unit>
+
 }

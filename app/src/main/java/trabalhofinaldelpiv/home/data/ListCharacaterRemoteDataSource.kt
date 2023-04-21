@@ -2,6 +2,7 @@ package trabalhofinaldelpiv.home.data
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import trabalhofinaldelpiv.character.newCharacter.data.CharacterRequest
 import trabalhofinaldelpiv.home.domain.ErrorModelListCharacter
 
 import trabalhofinaldelpiv.webservice.Result

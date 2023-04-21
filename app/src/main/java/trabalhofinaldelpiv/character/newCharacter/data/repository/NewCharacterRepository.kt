@@ -23,7 +23,7 @@ class NewCharacterRepository {
         characterRequest: CharacterRequest
     ): Result<Unit, ErrorModelCharacter> {
         val userId = localDatasource.getUserId()
-        return remoteCharacterDatasource.newCharacter(characterRequest, userId)
+        return remoteCharacterDatasource.newSaveCharacter(characterRequest, userId)
 
     }
 }

@@ -1,7 +1,5 @@
 package trabalhofinaldelpiv.character.newCharacter.data
 
-import java.util.*
-
 data class CharacterRequest(
     val name: String,
     val description: String,
@@ -9,6 +7,6 @@ data class CharacterRequest(
     val universeType: String,
     val characterType: String,
     val age: String,
-    val date: String
+    val date: String?
 )
 

@@ -22,6 +22,9 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   public final Button btnLogin;
 
   @NonNull
+  public final Button btnNewRegister;
+
+  @NonNull
   public final ConstraintLayout container;
 
   @NonNull
@@ -40,10 +43,12 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   public final TextInputLayout tilPassword;
 
   protected ActivityLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnLogin, ConstraintLayout container, EditText etEmail, EditText etPassword,
-      ProgressBar pbLoading, TextInputLayout tilEmail, TextInputLayout tilPassword) {
+      Button btnLogin, Button btnNewRegister, ConstraintLayout container, EditText etEmail,
+      EditText etPassword, ProgressBar pbLoading, TextInputLayout tilEmail,
+      TextInputLayout tilPassword) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnLogin = btnLogin;
+    this.btnNewRegister = btnNewRegister;
     this.container = container;
     this.etEmail = etEmail;
     this.etPassword = etPassword;

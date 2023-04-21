@@ -1,6 +1,5 @@
 package trabalhofinaldelpiv.character.newCharacter.presentation
 
-import android.media.Image
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,7 +27,7 @@ class NewCharacterViewModel : ViewModel() {
                 age != null && age > 0.toString() &&
                 date != null
             ) {
-                val newCharacterRegister = NewCharacterRemoteDataSource().newCharacter(
+                val newCharacterRegister = NewCharacterRemoteDataSource().newSaveCharacter(
                     CharacterRequest(name, description,image,universeType,
                 characterType, age, date), loginLocalDataSource.getUserId())
                 if (newCharacterRegister.get() != null) {

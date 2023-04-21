@@ -21,14 +21,19 @@ class CharacterViewModel : ViewModel() {
     private val state = MutableLiveData<CharacterViewState>()
     val viewState: LiveData<CharacterViewState> = state
 
-    fun fetchList() {
+    fun fetchList(characterType: String) {
         viewModelScope.launch {
             state.value = CharacterViewState.ShowLoading
             val userId =
                 App.context.getSharedPreferences("User", Context.MODE_PRIVATE).getInt("Id", 0)
-            val list = ListCharacaterRemoteDataSource().listCharacter(userId)
-            if (list.get() != null) {
-                state.value = CharacterViewState.ShowList(list.get().orEmpty())
+            val listResult = ListCharacaterRemoteDataSource().listCharacter(userId)
+
+            if (listResult.get() != null) {
+                val list = listResult.get()?.filter {
+                    it.characterType == characterType;
+                }
+                state.value = CharacterViewState.ShowList(list.orEmpty())
+
             } else {
                 state.value = CharacterViewState.ShowError
             }

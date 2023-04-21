@@ -23,6 +23,7 @@ drawable white_home_svgrepo_com
 id btnRegister
 id btn_home
 id btn_login
+id btn_newRegister
 id btn_profile
 id btn_save_character
 id char_container

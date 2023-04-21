@@ -2,7 +2,7 @@ package trabalhofinaldelpiv.home.data.repository
 
 import trabalhofinaldelpiv.home.data.ListCharacaterRemoteDataSource
 import trabalhofinaldelpiv.home.data.ListCharacterLocalDataSource
-import trabalhofinaldelpiv.home.data.CharacterRequest
+import trabalhofinaldelpiv.character.newCharacter.data.CharacterRequest
 import trabalhofinaldelpiv.home.data.CharacterResponse
 import trabalhofinaldelpiv.home.domain.ErrorModelListCharacter
 import trabalhofinaldelpiv.webservice.Result

@@ -12,10 +12,6 @@
         "source": "C:\\Users\\melissa.goulart\\.gradle\\daemon\\7.4\\com.fundatec.trabalhofinaldelpiv.app-main-66:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "com.fundatec.trabalhofinaldelpiv.app-merged_res-64:/layout_activity_register_user.xml.flat",
-        "source": "com.fundatec.trabalhofinaldelpiv.app-main-66:/layout/activity_register_user.xml"
-    },
-    {
         "merged": "C:\\Users\\melissa.goulart\\.gradle\\daemon\\7.4\\com.fundatec.trabalhofinaldelpiv.app-merged_res-64:\\layout_fragment_navigation.xml.flat",
         "source": "C:\\Users\\melissa.goulart\\.gradle\\daemon\\7.4\\com.fundatec.trabalhofinaldelpiv.app-main-66:\\layout\\fragment_navigation.xml"
     },
@@ -122,6 +118,10 @@
     {
         "merged": "C:\\Users\\melissa.goulart\\.gradle\\daemon\\7.4\\com.fundatec.trabalhofinaldelpiv.app-merged_res-64:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\melissa.goulart\\.gradle\\daemon\\7.4\\com.fundatec.trabalhofinaldelpiv.app-main-66:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.fundatec.trabalhofinaldelpiv.app-merged_res-64:/layout_activity_new_character.xml.flat",
+        "source": "com.fundatec.trabalhofinaldelpiv.app-main-66:/layout/activity_new_character.xml"
     },
     {
         "merged": "C:\\Users\\melissa.goulart\\.gradle\\daemon\\7.4\\com.fundatec.trabalhofinaldelpiv.app-merged_res-64:\\layout_list_item.xml.flat",

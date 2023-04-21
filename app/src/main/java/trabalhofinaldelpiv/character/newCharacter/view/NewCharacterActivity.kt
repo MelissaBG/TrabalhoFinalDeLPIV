@@ -17,6 +17,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import trabalhofinaldelpiv.character.newCharacter.presentation.NewCharacterViewModel
 import trabalhofinaldelpiv.character.newCharacter.presentation.ViewState
+import trabalhofinaldelpiv.home.view.HomeActivity
 
 
 class NewCharacterActivity : AppCompatActivity() {
@@ -68,7 +69,7 @@ class NewCharacterActivity : AppCompatActivity() {
 
     private fun showSucess() {
         hideLoging()
-        val intent = Intent(this@NewCharacterActivity, NewCharacterActivity::class.java)
+        val intent = Intent(this@NewCharacterActivity, HomeActivity::class.java)
         startActivity(intent)
     }
 

@@ -41,12 +41,9 @@ class CharacterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fetchList()
+        viewModel.fetchList(arguments?.getString(ARG_PARAM1, "").orEmpty())
         configItemTouch()
         configObserver()
-        arguments?.run {
-//            binding.tvName.text = getString(ARG_PARAM1)
-        }
     }
 
     private fun configItemTouch() {

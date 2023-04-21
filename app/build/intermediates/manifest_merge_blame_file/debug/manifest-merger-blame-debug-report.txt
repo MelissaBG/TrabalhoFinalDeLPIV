@@ -60,17 +60,17 @@
 36-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:26:13-49
 37            android:exported="false"
 37-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:27:13-37
-38            android:parentActivityName="com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity" >
-38-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:28:13-67
+38            android:parentActivityName="trabalhofinaldelpiv.home.view.HomeActivity" >
+38-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:28:13-84
 39        </activity>
 40        <activity
-40-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:25:9-29:20
-41            android:name="com.fundatec.trabalhofinaldelpiv.NewCharacterActivity"
-41-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:26:13-49
+40-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:30:9-34:20
+41            android:name="trabalhofinaldelpiv.profile.view.RegisterUserActivity"
+41-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:31:13-81
 42            android:exported="false"
-42-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:27:13-37
+42-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:32:13-37
 43            android:parentActivityName="com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity" >
-43-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:28:13-67
+43-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:33:13-67
 44        </activity>
 45        <activity
 45-->C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:35:9-44:20

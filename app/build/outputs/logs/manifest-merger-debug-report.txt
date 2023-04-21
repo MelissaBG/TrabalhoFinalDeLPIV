@@ -173,11 +173,19 @@ ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\Andro
 activity#com.fundatec.trabalhofinaldelpiv.NewCharacterActivity
 ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:25:9-29:20
 	android:parentActivityName
-		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:28:13-67
+		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:28:13-84
 	android:exported
 		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:27:13-37
 	android:name
 		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:26:13-49
+activity#trabalhofinaldelpiv.profile.view.RegisterUserActivity
+ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:30:9-34:20
+	android:parentActivityName
+		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:33:13-67
+	android:exported
+		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:31:13-81
 activity#com.fundatec.trabalhofinaldelpiv.login.view.LoginActivity
 ADDED from C:\Users\melissa.goulart\Desktop\TrabalhoFinalLPIV\app\src\main\AndroidManifest.xml:35:9-44:20
 	android:screenOrientation
